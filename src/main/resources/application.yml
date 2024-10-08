@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: service-discount
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/clients_db
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  liquibase:
+    enabled: true
+    change-log: classpath:clients_db/master.xml
+
+Clients:
+  url: localhost:8081
+
+server:
+  port: 8083
+service-discount:
+  zoneId: "Europe/Moscow"
+  discountBirthday: "15%"
+  discount: "5%"
+  lastDigitPhoneNumber: "7"
+  deadline: "23:00"
+  topic_name: "massageSMS"
+  host: "localhost:9092"
+  cron: "0 0 * * * *"
+
+
+
+
